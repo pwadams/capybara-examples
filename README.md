@@ -1,7 +1,7 @@
 -  Fork & Clone
 -  CD into app
 -  Name your app, `yourname-app`
--  Add `rspec-rails` && `capybara` to your gem file
+-  Add `rspec-rails` && `capybara` to your gemfile
 -  Bundle
 -  Run `rails g rspec:install`
 -  Write a capybara spec. Be creative, cover different types of input fields, buttons, links, etc.

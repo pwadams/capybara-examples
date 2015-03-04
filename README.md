@@ -1,6 +1,6 @@
 -  Fork & Clone
 -  CD into app
--  Name your app, `yourname-app`
+-  `rails new yourname-app -d postgresql` replace "yourname" with your actual name......
 -  Add `rspec-rails` && `capybara` to your gemfile
 -  Bundle
 -  Run `rails g rspec:install`

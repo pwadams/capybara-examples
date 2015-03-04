@@ -4,12 +4,12 @@ feature 'Users can CRUD whiskey' do
 
   before :each do
     @bourbon = Whiskey.new(name: 'Pappy Van Winkle 20 Year',
-                          type: 'Bourbon',
+                          whiskey_type: 'Bourbon',
                           place_of_origin: 'Frankfort, KY, USA',
                           proof: 90.4)
     @bourbon.save!
     @single_malt = Whiskey.new(name: 'The Macallan Fine Oak 21 Year',
-                              type: 'Single Malt',
+                              whiskey_type: 'Single Malt',
                               place_of_origin: 'Speyside, Scotland',
                               proof: 86)
     @single_malt.save!
@@ -24,7 +24,7 @@ feature 'Users can CRUD whiskey' do
     expect(page).to have_content 'Bourbon'
     expect(page).to have_content 'Frankfort, KY, USA'
     expect(page).to have_content '90.4'
-    expect(page).to have_content 'The Macallan Fine Oak 12 Year'
+    expect(page).to have_content 'The Macallan Fine Oak 21 Year'
     expect(page).to have_content 'Single Malt'
     expect(page).to have_content 'Speyside, Scotland'
     expect(page).to have_content '86'
@@ -32,7 +32,7 @@ feature 'Users can CRUD whiskey' do
 
   scenario 'User add a new Whiskey (or Whisky)' do
     visit whiskeys_path
-    click_button 'New Whiskey/Whisky'
+    click_link 'New Whiskey/Whisky'
 
     expect(current_path).to eq new_whiskey_path
     expect(page).to have_content 'Add a New Whiskey/Whisky'
@@ -70,7 +70,7 @@ feature 'Users can CRUD whiskey' do
     expect(current_path).to eq whiskey_path(@bourbon)
     expect(find_link('Back')[:href]).to eq(whiskeys_path)
     expect(find_link('Edit')[:href]).to eq(edit_whiskey_path(@bourbon))
-    expect(find_link('Delete'[:href]).to eq(whiskey_path(@whiskey))
+    expect(find_link('Delete')[:href]).to eq(whiskey_path(@bourbon))
   end
 
   scenario 'User can update Whiskey/Whisky' do

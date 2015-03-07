@@ -26,7 +26,16 @@ feature "Ice Cream" do
     expect(page).to have_content "Congrats! You just added a new ice cream!"
   end
 
-  scenario
-
+  scenario "User can see an individual ice cream record"
+    butter_pecan = IceCream.create!(
+      flavor: "butter pecan",
+      description: "yummy in my tummy",
+      company: "Sweet Cow",
+      allergens: "dairy, nuts"
+    )
+    visit root_path
+    click_on butter_pecan.name
+    expect(current_path).to eq ice_cream_path(butter_pecan)
+  end
 
 end

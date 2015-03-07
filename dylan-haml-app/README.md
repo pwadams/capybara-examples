@@ -1,28 +1,14 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# This is a TDD crud-Auth App for CATS!!!!
 
-Things you may want to cover:
+---
 
-* Ruby version
+**If you are stuck please git checkout solution**
 
-* System dependencies
+Clone this Repo!
 
-* Configuration
+Read the Spec files
 
-* Database creation
+**_Make the Tests Pass!_**
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Look out for my update to this app... CATS HAVE KITTENS!

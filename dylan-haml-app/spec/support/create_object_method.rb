@@ -8,7 +8,7 @@ end
 
 def create_cat(options = {})
   Cat.create!({
-    name: "Midnight #{random(1..999)}",
+    name: "Midnight #{rand(1..999)}",
     age: '4.25',
     friendly: true
   }.merge(options))

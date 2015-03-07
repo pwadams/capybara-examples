@@ -19,7 +19,7 @@ feature 'Cats Crud' do
 
   scenario 'a user can create a new cat' do
 
-    visit_cats_path
+    visit cats_path
     expect(page).to have_content 'New Cat'
     click_on 'New Cat'
     expect(current_path).to eq(new_cat_path)
@@ -29,10 +29,10 @@ feature 'Cats Crud' do
     check 'Friendly'
     click_on 'Adopt Cat'
     expect(current_path).to eq(cats_path)
-    expect(page).to have_content('Name: Sparkle')
-    expect(page).to have_content('Age: 5 years old')
-    expect(page).to have_content('Friendly: true')
     expect(page).to have_content('Congratulations on your new cat!')
+    expect(page).to have_content('Name: Sparkle')
+    expect(page).to have_content('Age: 5.0 years old')
+    expect(page).to have_content('Friendly: true')
   end
 
   scenario 'a user can edit a cat' do
@@ -45,10 +45,10 @@ feature 'Cats Crud' do
     check 'Friendly'
     click_on 'Update'
     expect(current_path).to eq(cats_path)
-    expect(page).to have_content("Name: #{cat.name}")
+    expect(page).to have_content("Name: Fluffy")
     expect(page).to have_content("Age: #{cat.age}")
     expect(page).to have_content("Friendly: #{cat.friendly}")
-    expect(page).to have_content("You changed #{cat.name}'s stats!")
+    expect(page).to have_content("You changed Fluffy's stats!")
   end
 
   scenario 'a user can delete a cat' do

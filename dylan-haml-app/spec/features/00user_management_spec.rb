@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'User' do
 
+
   scenario 'user can visit root path and sign up' do
     visit root_path
     click_on 'Sign Up'
@@ -14,7 +15,7 @@ feature 'User' do
     expect(current_path).to eq(root_path)
     expect(page).to have_content('You successfully signed up!')
   end
-  
+
   scenario 'User can visit a page to sign in' do
     user = create_user
     visit root_path

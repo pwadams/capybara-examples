@@ -16,7 +16,7 @@ end
 
 def create_kitten(cat, options = {})
   Kitten.create!({
-    name: "Rocky #{rand(1..999)}"
+    name: "Rocky #{rand(1..999)}",
     cat_id: cat.id
   }.merge(options))
 end

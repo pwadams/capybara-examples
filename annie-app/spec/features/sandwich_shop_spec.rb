@@ -43,7 +43,7 @@ feature 'Sandwich shop' do
     roast_beef = Sandwich.create!(name: "Roasty Toasty", price: 5.00, notes: "too much meat")
     visit sandwich_path(roast_beef)
     click_on "Delete"
-    expect(page).not_to have_content("Roasty Toasty")
+    expect { roast_beef.reload }.to raise_error ActiveRecord::RecordNotFound
     expect(page).to have_content("Roasty Toasty has been removed from the menu")
     expect(current_path).to eq("/")
   end

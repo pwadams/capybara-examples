@@ -1,7 +1,7 @@
 describe User do
 
-  before :each do
-    @user = User.new(first_name: "Bob", last_name: "Smith", email: "bob@smith.com", password: "password", password_confirmation: "password")
+  before do
+    @user = User.new(first_name: "Bob", last_name: "Smith", email: "bob@smith.com", password: "password")
   end
 
   it 'is valid with a first name, last name, email, and password' do
@@ -35,7 +35,7 @@ describe User do
 
   it 'is invalid with a duplicate email address' do
     @user.save
-    user_2 = User.new(first_name: "Roberta", last_name: "Smith", email: "bob@smith.com", password: "password", password_confirmation: "password")
+    user_2 = User.new(first_name: "Roberta", last_name: "Smith", email: "bob@smith.com", password: "password")
     user_2.valid?
     expect(user_2.errors[:email]).to eq(["has already been taken"])
   end
